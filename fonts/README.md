@@ -1,29 +1,29 @@
 # Font CDN
 
-A lightweight CDN for serving web fonts, optimized for PDF generation with Puppeteer.
+![CDN Status](https://img.shields.io/badge/CDN-Live-brightgreen) 
+![License](https://img.shields.io/badge/License-MIT-blue)
 
-## Available Fonts
+High-performance font CDN hosted on GitHub Pages, perfect for web projects and Puppeteer PDF generation.
 
-| Font Name      | Styles Available | Example URL |
-|----------------|------------------|-------------|
-| Airstrip       | Regular          | `https://shifaul-expressitbd.github.io/font-cdn/fonts/airstrip.woff` |
-| Autography     | Regular          | `https://shifaul-expressitbd.github.io/font-cdn/fonts/autography.woff` |
-| Pollinator     | Regular          | `https://shifaul-expressitbd.github.io/font-cdn/fonts/pollinator.woff` |
+## 🌟 Available Fonts
 
-## How to Use
+| Font        | Styles       | WOFF2 (Recommended) | WOFF       |
+|-------------|--------------|---------------------|------------|
+| **Airstrip**  | Regular      | [Link](https://shifaul-expressitbd.github.io/font-cdn/fonts/airstrip.woff2) | [Link](https://shifaul-expressitbd.github.io/font-cdn/fonts/airstrip.woff) |
+| **Autography**| Regular      | [Link](https://shifaul-expressitbd.github.io/font-cdn/fonts/autography.woff2) | [Link](https://shifaul-expressitbd.github.io/font-cdn/fonts/autography.woff) |
+| **Pollinator**| Regular      | [Link](https://shifaul-expressitbd.github.io/font-cdn/fonts/pollinator.woff2) | [Link](https://shifaul-expressitbd.github.io/font-cdn/fonts/pollinator.woff) |
 
-### 1. In HTML/CSS
+## 🚀 Quick Start
+
+### HTML Usage
 ```html
 <style>
   @font-face {
     font-family: 'Airstrip';
-    src: url('https://shifaul-expressitbd.github.io/font-cdn/fonts/airstrip.woff') format('woff');
+    src: url('https://shifaul-expressitbd.github.io/font-cdn/fonts/airstrip.woff2') format('woff2'),
+         url('https://shifaul-expressitbd.github.io/font-cdn/fonts/airstrip.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
-  }
-  
-  body {
-    font-family: 'Airstrip', sans-serif;
   }
 </style>
