@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!--
+  Dynamic Font CSS API for GitHub Pages
+  Usage: <link rel="stylesheet" href="https://shifaul-expressitbd.github.io/font-cdn/api.css?family=Airstrip:wght@400;700|Autography&display=swap">
+-->
+<script>
+  // Set your GitHub Pages base URL
+  const CDN_BASE = "https://shifaul-expressitbd.github.io/font-cdn/fonts/";
+  const url = new URL(window.location.href);
+  const family = url.searchParams.get("family");
+  const display = url.searchParams.get("display") || "swap";
+
+  let css = "";
+  if (family) {
+    family.split("|").forEach((font) => {
+      const [name, config] = font.split(":");
+      let weights = [400];
+      if (config?.includes("wght@")) {
+        weights = config.split("wght@")[1].split(";").map(Number);
+      }
+      weights.forEach((weight) => {
+        css += `@font-face {\n  font-family: '${name}';\n  src: url('${CDN_BASE}${name.toLowerCase()}.woff2') format('woff2'),\n       url('${CDN_BASE}${name.toLowerCase()}.woff') format('woff');\n  font-weight: ${weight};\n  font-style: normal;\n  font-display: ${display};\n}\n`;
+      });
+    });
+  } else {
+    css = `/* Usage: ?family=FontName[:wght@400;700][|AnotherFont] */`;
+  }
+
+  // Output only CSS (no HTML wrapper)
+  document.open();
+  document.write(`<pre style='all:unset;'><style>${css}</style></pre>`);
+  document.close();
+</script>
